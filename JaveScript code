@@ -1,0 +1,20 @@
+function rot13(message){
+  let str = "";
+  let charCode = 0;
+  console.log(message)
+  for (let i = 0; i < message.length; i++) {
+    if (message.charCodeAt(i) >96 && message.charCodeAt(i) <110) {
+      charCode = message.charCodeAt(i)+13;
+      str += String.fromCharCode(charCode);
+    } else if (message.charCodeAt(i) >109 && message.charCodeAt(i) <123) {
+        charCode = message.charCodeAt(i)-13;
+        str += String.fromCharCode(charCode);
+    } else if (message.charCodeAt(i) >64 && message.charCodeAt(i) <78) {
+        charCode = message.charCodeAt(i)+13;
+        str += String.fromCharCode(charCode);
+    } else if (message.charCodeAt(i) >77 && message.charCodeAt(i) <91) {
+        charCode = message.charCodeAt(i)-13; 
+        str += String.fromCharCode(charCode);
+    } else {str += String.fromCharCode(message.charCodeAt(i));}
+  }
+  return str;
